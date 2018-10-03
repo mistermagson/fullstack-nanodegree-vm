@@ -84,8 +84,8 @@ def deleteCategory(category_id):
 @app.route('/category/<int:category_id>/menu/')
 def showItems(category_id):
     category = session.query(Category).filter_by(id = category_id).one()
-    items = session.query(MenuItem).filter_by(category_id = category_id).all()
-    return render_template('menu.html', items = items, category = category)
+    items = session.query(Item).filter_by(category_id = category_id).all()
+    return render_template('category.html', items = items, category = category)
 
 @app.route('/category/<int:category_id>/<int:item_id>/show')
 def showItem(item_id):
