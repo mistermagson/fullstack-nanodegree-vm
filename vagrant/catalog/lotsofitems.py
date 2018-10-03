@@ -1,7 +1,7 @@
-from sqlalchemy import create_engine
+Itemfrom sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from database_setup import Base, User, Category, CategoryItem
+from database_setup import Base, User, Category, Item
 
 engine = create_engine('sqlite:///catalog.db')
 # Bind the engine to the metadata of the Base class so that the
@@ -27,7 +27,7 @@ session.add(user1)
 session.add(category1)
 
 for x in range(0, 5):
-    categoryItem = CategoryItem(title = "Tenis %s" % x, description = "Dolor sit amet", user=user1, category = category1)
+    categoryItem = Item(title = "Tenis %s" % x, description = "Dolor sit amet", user=user1, category = category1)
     session.add(categoryItem)
 session.commit()
 
@@ -40,7 +40,7 @@ session.add(user1)
 session.add(category1)
 
 for x in range(0, 4):
-    categoryItem = CategoryItem(title = "Frier %s" % x, description = "Loren Ipsum", user=user1, category = category1)
+    categoryItem = Item(title = "Frier %s" % x, description = "Loren Ipsum", user=user1, category = category1)
     session.add(categoryItem)
 session.commit()
 
@@ -52,7 +52,7 @@ session.add(user1)
 session.add(category1)
 
 for x in range(0, 3):
-    categoryItem = CategoryItem(title = "YYY %s" % x, description = "Loren Ipsum", user=user1, category = category1)
+    categoryItem = Item(title = "YYY %s" % x, description = "Loren Ipsum", user=user1, category = category1)
     session.add(categoryItem)
 session.commit()
 

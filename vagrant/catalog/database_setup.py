@@ -11,7 +11,7 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     email = Column(String(250), nullable=False)
-    
+
 
     @property
     def serialize(self):
@@ -38,8 +38,8 @@ class Category(Base):
            'id'           : self.id,
        }
 
-class CategoryItem(Base):
-    __tablename__ = 'category_item'
+class Item(Base):
+    __tablename__ = 'item'
 
 
     title =Column(String(80), nullable = False)
