@@ -38,7 +38,7 @@ def CategoriesJSON():
 @app.route('/category/')
 def showCategories():
   categories = session.query(Category).order_by(asc(Category.name))
-  items = session.query(Item).limit(2).order_by(desc(Item.id)).all()
+  items = session.query(Item).limit(2).all()
   return render_template('categories.html', categories = categories, items=items)
 
 #Create a new Category
